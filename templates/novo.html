@@ -1,5 +1,25 @@
 {% extends "template.html" %} {% block content %}
-<form action="{{ url_for('criar') }}" method="post">
+<form
+  action="{{ url_for('criar') }}"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <div class="form-label">
+    <figure>
+      <img
+        src="{{ url_for('imagem', nome_arquivo='capa_padrao.jpg') }}"
+        alt="capa padrao"
+        class="mt-2 mb-2 img-thumbnail"
+        style="height: 200px"
+      />
+      <figcaption class="figure-caption">
+        <label for="arq">
+          Mudar Capa
+          <input type="file" id="arq" name="arquivo" accept=".jpg" />
+        </label>
+      </figcaption>
+    </figure>
+  </div>
   <fieldset>
     <div class="form-label">
       <label for="nome">Nome</label>
