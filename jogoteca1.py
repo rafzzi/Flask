@@ -1,4 +1,3 @@
-from email.utils import collapse_rfc2231_value
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
