@@ -1,4 +1,3 @@
-from mailbox import NotEmptyError
 from jogoteca1 import app
 import os
 from flask_wtf import FlaskForm
