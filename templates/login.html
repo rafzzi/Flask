@@ -1,22 +1,26 @@
 {% extends "template.html" %} {% block content %}
-<form action="{{ url_for('autenticar') }}" method="post">
+<form action="{{ url_for('autenticar') }}" method="POST">
   <div class="container">
-    <input
-      type="hidden"
-      name="proxima"
-      value="{{ proxima or url_for('index') }}"
-    />
-    <p>
-      <label>Nome de Usuário</label>
-      <input class="form-control" type="text" name="usuario" required />
-    </p>
-    <p>
-      <label>Senha</label>
-      <input class="form-control" type="password" name="senha" required />
-    </p>
-    <p>
-      <button class="btn btn-primary" type="submit">Entrar</button>
-    </p>
+    <div class="col-5 aligm-self-start mt-3">
+      <input
+        type="hidden"
+        name="proxima"
+        value="{{ proxima or url_for('index') }}"
+      />
+      {{ form.csrf_token() }}
+      <p>
+        {{ form.username.label(class="form-label") }} {{
+        form.username(class="form-control") }}
+      </p>
+      <p>
+        {{ form.senha.label(class="form-label") }} {{
+        form.senha(class="form-control") }}
+      </p>
+      <p>
+        {{ form.login(class="btn btn-primary") }}
+        <a class="btn btn-primary" href="{{ url_for('index') }}">Voltar</a>
+      </p>
+    </div>
   </div>
 </form>
 
