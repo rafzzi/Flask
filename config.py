@@ -1,6 +1,6 @@
 import os
 
-SECRET_KEY = 'afiga'
+SECRET_KEY = 'shhhh'
 
 SQLALCHEMY_DATABASE_URI = \
     '{SGBD}://{usuario}:{senha}@{servidor}/{database}'.format(
